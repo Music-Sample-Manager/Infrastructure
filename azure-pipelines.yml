@@ -10,6 +10,11 @@ pool:
   vmImage: "Ubuntu-16.04"
 
 steps:
+  - task: DownloadSecureFile@1
+    displayName: Download Terraform SP client certificate
+    inputs:
+      secureFile: AzureTerraformSPAuthCert.pfx
+
   - pwsh: terraform init -input=false
     displayName: "Initialize Terraform"
 
