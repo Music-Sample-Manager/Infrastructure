@@ -10,8 +10,8 @@ pool:
   vmImage: "Ubuntu-16.04"
 
 steps:
-  - script: terraform init -input=false
+  - pwsh: terraform init -input=false
     displayName: "Initialize Terraform"
 
-  - script: terraform plan -out=tfplan -input=false $(args)
+  - pwsh: terraform plan -out=tfplan -input=false $(args)
     displayName: "Create Terraform execution plan"
