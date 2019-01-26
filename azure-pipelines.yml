@@ -18,7 +18,7 @@ steps:
   - pwsh: terraform init -input=false
     displayName: "Initialize Terraform"
 
-  - pwsh: terraform plan -out=$(Build.ArtifactStagingDirectory)\tfplan -input=false $(args) -var subscription_id=1a837e35-1156-4cd4-bf7e-11d458fe29af
+  - pwsh: terraform plan -out=$(Build.ArtifactStagingDirectory)/tfplan -input=false $(args) -var subscription_id=1a837e35-1156-4cd4-bf7e-11d458fe29af
     displayName: "Create Terraform execution plan"
 
   - task: PublishBuildArtifacts@1
