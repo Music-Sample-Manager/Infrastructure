@@ -10,13 +10,8 @@ pool:
   vmImage: "Ubuntu-16.04"
 
 steps:
-  - script: echo Hello, world!
-    displayName: "Run a one-line script"
+  - script: terraform init -input=false
+    displayName: "Initialize Terraform"
 
-  - script: terraform plan
+  - script: terraform plan -out=tfplan -input=false
     displayName: "Create Terraform execution plan"
-
-  - script: |
-      echo Add other tasks to build, test, and deploy your project.
-      echo See https://aka.ms/yaml
-    displayName: "Run a multi-line script"
