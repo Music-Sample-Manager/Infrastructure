@@ -13,5 +13,5 @@ steps:
   - script: terraform init -input=false
     displayName: "Initialize Terraform"
 
-  - script: terraform plan -out=tfplan -input=false
+  - script: terraform plan -out=tfplan -input=false $(args)
     displayName: "Create Terraform execution plan"
