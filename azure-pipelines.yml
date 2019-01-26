@@ -13,5 +13,5 @@ steps:
   - pwsh: terraform init -input=false
     displayName: "Initialize Terraform"
 
-  - pwsh: terraform plan -out=tfplan -input=false $(args)
+  - pwsh: terraform plan -out=tfplan -input=false $(args) -var subscription_id=1a837e35-1156-4cd4-bf7e-11d458fe29af
     displayName: "Create Terraform execution plan"
