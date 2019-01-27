@@ -21,6 +21,10 @@ steps:
   - pwsh: terraform plan -out=$(Build.ArtifactStagingDirectory)/tfplan -input=false $(args) -var subscription_id=1a837e35-1156-4cd4-bf7e-11d458fe29af
     displayName: "Create Terraform execution plan"
 
+  - task: CopyFiles@2
+    contents: '**\**'
+    targetFolder: $(Build.ArtifactStagingDirectory)
+
   - task: PublishBuildArtifacts@1
     inputs:
       pathtoPublish: $(Build.ArtifactStagingDirectory)
