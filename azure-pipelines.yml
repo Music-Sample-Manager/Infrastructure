@@ -22,8 +22,9 @@ steps:
     displayName: "Create Terraform execution plan"
 
   - task: CopyFiles@2
-    contents: '**\**'
-    targetFolder: $(Build.ArtifactStagingDirectory)
+    inputs:
+      contents: '**\**'
+      targetFolder: $(Build.ArtifactStagingDirectory)
 
   - task: PublishBuildArtifacts@1
     inputs:
