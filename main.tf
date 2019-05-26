@@ -23,9 +23,9 @@ provider "azurerm" {
   tenant_id                   = "${var.tenant_id}"
 }
 
-# module "AzureAdConfig" {
-#   source = "./Modules/azure_ad_config/"
-# }
+module "AzureAdConfig" {
+  source = "./Modules/azure_ad_config"
+}
 
 resource "azurerm_resource_group" "MusicSampleManagerResourceGroup" {
   name     = "MusicSampleManagerRG"
