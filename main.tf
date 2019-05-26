@@ -24,6 +24,7 @@ provider "azurerm" {
 }
 
 provider "azuread" {
+  alias   = "aad"
   version = "=0.3.0"
 
   subscription_id             = "${var.subscription_id}"
@@ -35,6 +36,10 @@ provider "azuread" {
 
 module "AzureAdConfig" {
   source = "./Modules/azure_ad_config"
+
+  providers = {
+    azuread = "azuread.aad"
+  }
 }
 
 resource "azurerm_resource_group" "MusicSampleManagerResourceGroup" {
