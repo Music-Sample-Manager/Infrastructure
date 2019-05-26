@@ -1,7 +1,3 @@
-provider "azuread" {
-  version = "=0.3.0"
-}
-
 # ===== Service Principals =====
 resource "azuread_application" "MSMApp_DBAccess" {
   name                       = "MusicSampleManager Application: Database Access"
