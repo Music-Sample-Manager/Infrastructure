@@ -14,7 +14,7 @@ variable "database_server_admin_password" {
 
 provider "azurerm" {
   # Whilst version is optional, we /strongly recommend/ using it to pin the version of the Provider being used
-  version = "=1.20.0"
+  version = "=1.29.0"
 
   subscription_id             = "${var.subscription_id}"
   client_id                   = "${var.client_id}"
@@ -25,7 +25,7 @@ provider "azurerm" {
 
 provider "azuread" {
   alias   = "aad"
-  version = "=0.3.0"
+  version = "=0.3.1"
 
   subscription_id             = "${var.subscription_id}"
   client_id                   = "${var.client_id}"
